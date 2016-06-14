@@ -1,7 +1,16 @@
+var colors	 = require('colors');
 var express  = require('express');
 var app      = express();
-var colors	 = require('colors');
+
+var constants     	= require('./customize/paths');
+var stringX   			= require(constants.paths.utils + '/stringX');
+var appServ   			= require(constants.paths.services + '/app');
 
 var port     = process.env.PORT || 8080;
 
-console.log(colors.blue('Application started successfully'));
+var util = require('./utils/stringX');
+
+var appInfo = appServ.info();
+
+console.log(colors.blue(stringX.format("\nApplication: %s ver %s:%s", appInfo.name, appInfo.version, appInfo.gitHash )));
+console.log(colors.blue(stringX.format('   running at port %s', port)));
