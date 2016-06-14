@@ -5,8 +5,9 @@ var app      = express();
 var constants     	= require('./customize/paths');
 var stringX   			= require(constants.paths.utils + '/stringX');
 var appServ   			= require(constants.paths.services + '/app');
+var config        	= require(constants.paths.customize + '/config');
 
-var port     = process.env.PORT || 8080;
+var port     = config.get("web.http.port");
 
 var util = require('./utils/stringX');
 

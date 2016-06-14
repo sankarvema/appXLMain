@@ -4,7 +4,9 @@ module.exports = {
 
     'paths' : {
         'services'								: __dirname + '/../services',
-        'utils'									: __dirname + '/../utils'
+        'utils'									: __dirname + '/../utils',
+				'customize'									: __dirname + '/../customize',
+				'config'									: __dirname + '/../config'
     }
 
 };
